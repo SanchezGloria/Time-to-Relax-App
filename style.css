@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.time__select,
+.sound__picker {
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.few-mins,
+.medium-mins,
+.long-mins,
+
+/* .time-select button, */
+.sound__picker--btn {
+  color: white;
+  width: 30%;
+  height: 10%;
+  /* PARA QUE NO SE VE LO BLANCO DEL FONDO */
+  background: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid white;
+  /* PARA CAMBIARLO A BLANCO NICELY */
+  transition: all 0.5s ease;
+}
+
+.sound__picker--btn {
+  border: none;
+  height: 120px;
+  width: 120px;
+  /* ASÍ EL BORDER RADIUS DE 5O HACE QUE ESTE PROPORCIONADO TODO Y CIRCULAR */
+  padding: 30px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* SE PUEDE, POR EJ. QUE NO SEA EL DEFAULT Y SE LE AÑADE OTRA CLASE PARA EL 2. */
+.sound__picker--btn:nth-child(1) {
+  background: #4972a1;
+}
+.sound__picker--btn:nth-child(2) {
+  background: #a14f49;
+}
+.sound__picker--btn:nth-child(3) {
+  background: #3bb957;
+}
+.sound__picker--btn--img {
+  height: 100%;
+}
+.fas.fa-spa {
+  font-size: 60px;
+  color: white;
+}
+.few-mins:hover {
+  background: white;
+  color: black;
+}
+.medium-mins:hover {
+  background: white;
+  color: black;
+}
+.long-mins:hover {
+  background: white;
+  color: black;
+}
+
+.player__container {
+  position: relative;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.player__container--svg {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  /* EL ROTATE PARA QUE EMPIECE ARRIBA Y NO A LAS 3PM */
+  transform: translate(-50%, -50%) rotate(-90deg);
+  /* NO SE PUEDE CLICAR EL PLAY PORQUE EL CÍRCULO ESTÁ ENCIMA */
+  pointer-events: none;
+}
+
+.player__container--svg {
+  width: 453;
+  height: 453;
+  fill-opacity: 0;
+}
+
+.player__container--svg--circle {
+  transition: all 0.2s ease-in-out;
+  stroke: white;
+  stroke-width: 20;
+}
+
+.player__container--svg--circle.time {
+  stroke: #018eba;
+}
+
+.player__container--title {
+  color: white;
+  position: absolute;
+  font-size: 50px;
+  bottom: 10%;
+}
+
+.video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -10;
+}
+@media all and (max-width: 880px) {
+  .app {
+    /* width: 100vw; */
+    /* height: 100vh;
+    display: flex; */
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+     /* align-items: center;
+    font-family: 'Montserrat', sans-serif;  */
+  }
+  .video{
+    z-index: 0;
+    height: 70vh;
+    width: auto;
+    /* width:100vw; */
+    /* order:1 */
+    
+  }
+  .time__select{
+   
+order: 2;
+/* background: rgb(212, 208, 210); */
+/* width: 100vh; */
+/* margin: 50px; */
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+  }
+  .sound__picker{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* width: 100vw; */
+    /* background: lightblue; */
+  }
+  .few-mins,
+.medium-mins,
+.long-mins,
+
+  .sound__picker--btn {
+  margin: 10px;
+    width: 80px;
+    height: 80px;
+    /* border-radius: 50%; */
+    font-size: 10px;
+    
+  }
+  .few-mins,
+.medium-mins,
+.long-mins{
+color: rgb(88, 140, 238);
+
+     border-radius: 5px;
+  border: 2px solid rgb(88, 140, 238);
+}
+  .few-mins:hover {
+  background: rgb(240, 240, 240);
+  color: black;
+}
+.medium-mins:hover {
+  background: rgb(240, 240, 240);
+  color: black;
+}
+.long-mins:hover {
+   background:  rgb(240, 240, 240);
+  color: black;
+}
+  .sound__picker--btn--img, .fas.fa-spa {
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -10px;
+  left: -10px;
+  
+  
+}
+.player__container {
+  /* border: 1px solid lawngreen; */
+  position: relative;
+  height:  100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+.player__container--title {
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  bottom: 10%;
+}
+.play{
+  width: 60%;
+}
+.replay{
+  color: rgb(88, 140, 238);
+  
+}
+}
+  /* .time__select,
+  .sound__picker,
+  .player__container {
+    width: 100%;
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+
+    justify-content: flex-end;
+    align-items: flex-end;
+    background: greenyellow;
+  }
+  .time__select {
+    background: hotpink;
+    width: 100vh;
+  }
+}
+@media all and (max-width: 769px) {
+  .video {
+  }
+} */ */
